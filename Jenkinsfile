@@ -4,9 +4,9 @@ pipeline{
         gradle "gradle"
     }
     stages{
-        stage("Cloning repository"){
+        stage("Clone Repository"){
             steps{
-                git branch:"master", url:"https://github.com/kadimasum/java-todo.git"
+                git branch:"master", url:"https://github.com/EzM-dot/java-todo.git"
             }
         }
         
@@ -14,8 +14,8 @@ pipeline{
             steps{
                 sh "gradle build"
             }
+            
         }
-        
         stage("Testing code"){
             steps{
                 sh "gradle test"
